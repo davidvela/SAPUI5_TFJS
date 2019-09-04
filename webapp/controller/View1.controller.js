@@ -46,6 +46,32 @@ sap.ui.define([
 			// this.byId("iImageTicket").setSrc("../assets/cat.jpg"); 
 			// oFileUploader.insertHeaderParameter(new sap.ui.unified.FileUploaderParameter({name: "slug", value: oFileUploader.getValue() }));
 			oFileUploader.upload();
+		// old code: 
+			//oFileUploader.upload();
+			 /*var oFileUploader2 = new sap.ui.unified.FileUploader({
+                uploadUrl : "your_service/UserSet('"+ user[0].getValue() +"')/Photo",
+                name: "simpleUploader", 
+                uploadOnChange: false,
+                sendXHR: true,
+                useMultipart: false,
+                headerParameters: [
+                    new sap.ui.unified.FileUploaderParameter({name: "x-csrf-token", value: sap.ui.getCore().getModel().getHeaders()['x-csrf-token'] }),    
+                ],
+                uploadComplete: function (oEvent) {
+                    var sResponse = oEvent.getParameter("response");
+                    if (sResponse) {
+                        oUploadDialog.close();
+                        sap.ui.commons.MessageBox.show("Return Code: " + sResponse, "Response", "Response");
+                    }
+                }  
+			});
+			// press: 
+				 oFileUploader.insertHeaderParameter(new sap.ui.unified.FileUploaderParameter({name: "slug", value: oFileUploader.getValue() }));
+                 oFileUploader.upload();
+			*/
+			
+			
+			
 		}, 
 		handlePredictPress: function(oEvent){
 			var label = this.getView().byId("idLabel");
