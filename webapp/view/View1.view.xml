@@ -1,9 +1,27 @@
-<mvc:View controllerName="test.tensorflowjs.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View controllerName="test.tensorflowjs.controller.View1" displayBlock="true" 
+				xmlns:mvc="sap.ui.core.mvc" 
+				xmlns="sap.m" 	
+				xmlns:l="sap.ui.layout"
+				xmlns:u="sap.ui.unified">
 	<Shell id="shell">
 		<App id="app">
 			<pages>
-				<Page id="page" title="{i18n>title}">
-					<content></content>
+				<Page id="page" title="TFJS - mobilenet">
+					<content>
+						<l:VerticalLayout>
+							<u:FileUploader id="fileUploader" name="myFileUpload" uploadUrl="upload/" tooltip="Upload your file to the local server"
+								uploadComplete="handleUploadComplete"/>
+							<l:HorizontalLayout>
+								<Button text="Upload File" press="handleUploadPress"/>
+								<Button text="Predict Image" press="handlePredictPress"/>
+							</l:HorizontalLayout>
+
+						    <Image press="onPressSeeImagen" id="iImageTicket" densityAware="false"/>
+						    <!--  width="300px" height="300px" -->
+							<Text id="idLabel" text = "predictions" />
+							
+						</l:VerticalLayout>
+					</content>
 				</Page>
 			</pages>
 		</App>
